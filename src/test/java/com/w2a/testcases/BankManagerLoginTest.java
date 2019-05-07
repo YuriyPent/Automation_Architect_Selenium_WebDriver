@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LoginTest extends TestBase {
+public class BankManagerLoginTest extends TestBase {
 
     @Test
     public void loginAsBankManager() throws InterruptedException {
