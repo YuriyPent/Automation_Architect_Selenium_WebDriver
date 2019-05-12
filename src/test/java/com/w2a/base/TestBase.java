@@ -5,6 +5,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import com.w2a.utilities.ExcelReader;
 import com.w2a.utilities.ExtentManager;
+import com.w2a.utilities.TestUtil;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -13,6 +14,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
@@ -115,6 +118,26 @@ public class TestBase {
             return true;
         } catch (NoSuchElementException e) {
             return false;
+        }
+    }
+
+    public static void verifyEquals(String expected, String actual) throws IOException {
+        try {
+
+            Assert.assertEquals(actual, expected);
+        }catch (Throwable t){
+
+            TestUtil.captureScreenshot();
+            //ReportNG
+            Reporter.log("<br>"+"Verification failure : "+t.getMessage()+"<br>");
+            Reporter.log("<a target=\"_blank\" href=" + TestUtil.screenshotName +
+                    "><img src=" + TestUtil.screenshotName + " height=200 width=200></img></a>");
+            Reporter.log("<br>");
+            Reporter.log("<br>");
+            //Extent Reports
+            TestBase.test.log(LogStatus.FAIL,"Verification failed with exception: " + t.getMessage());
+            TestBase.test.log(LogStatus.FAIL, test.addScreenCapture(TestUtil.screenshotName));
+
         }
     }
 
