@@ -12,7 +12,7 @@ public class BankManagerLoginTest extends TestBase {
     @Test
     public void loginAsBankManager() throws InterruptedException, IOException {
 
-        verifyEquals("abc", "xyz");
+//        verifyEquals("abc", "xyz");
 
         log.debug("Inside Login Test");
         click("bmlBtn_CSS");

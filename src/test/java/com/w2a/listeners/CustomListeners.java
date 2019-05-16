@@ -53,7 +53,6 @@ public class CustomListeners extends TestBase implements ITestListener {
         TestBase.test.log(LogStatus.FAIL, test.addScreenCapture(TestUtil.screenshotName));
 
 
-
         Reporter.log("Click to see Screenshot");
 //        Reporter.log("Login successfully executed");
         Reporter.log("<a target=\"_blank\" href=" + TestUtil.screenshotName + ">Screenshot</a>");

@@ -17,11 +17,12 @@ public class AddCustomerTest extends TestBase {
         type("lastname_CSS", lastName);
         type("postcode_CSS", postCode);
         click("addbtn_CSS");
+
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
         Assert.assertTrue(alert.getText().contains(alerttext));
         alert.accept();
 
-        Assert.fail("Customer not added successfully");
+//        Assert.fail("Customer not added successfully");
     }
 
 

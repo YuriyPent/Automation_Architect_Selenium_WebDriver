@@ -18,7 +18,7 @@
     </test> <!-- Test -->
     <test name="Open Account Test">
         <classes>
-            <!--<class name="com.w2a.testcases.OpenAccountTest"/>-->
+            <class name="com.w2a.testcases.OpenAccountTest"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->
