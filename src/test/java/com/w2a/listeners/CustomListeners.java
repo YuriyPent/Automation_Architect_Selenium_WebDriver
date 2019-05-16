@@ -15,7 +15,6 @@ public class CustomListeners extends TestBase implements ITestListener {
     public void onTestStart(ITestResult iTestResult) {
 
         test = rep.startTest(iTestResult.getName().toUpperCase());
-
     }
 
     public void onTestSuccess(ITestResult iTestResult) {
@@ -67,6 +66,9 @@ public class CustomListeners extends TestBase implements ITestListener {
 
     public void onTestSkipped(ITestResult iTestResult) {
 
+        test.log(LogStatus.SKIP, iTestResult.getName().toUpperCase() + " Skipped the test as the Run mode is NO");
+        rep.endTest(test);
+        rep.flush();
     }
 
     public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
