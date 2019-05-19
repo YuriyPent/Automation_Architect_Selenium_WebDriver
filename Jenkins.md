@@ -15,3 +15,6 @@ This plugin publishes HTML reports
 * Report title - `Extent Reports`
 * Restart jenkins with: 
 `java -Dhudson.model.DirectoryBrowserSupport.CSP="" -jar jenkins.war`
+* This build is parameterized --> Add parameter --> Choise Parameter
+* Name `browser`
+* Choises `firefox, chrome, ie`
