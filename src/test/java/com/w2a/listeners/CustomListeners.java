@@ -15,6 +15,7 @@ import java.net.UnknownHostException;
 public class CustomListeners extends TestBase implements ITestListener, ISuiteListener {
 
     public String meaasgeBody;
+
     public void onTestStart(ITestResult iTestResult) {
 
         test = rep.startTest(iTestResult.getName().toUpperCase());
@@ -95,9 +96,9 @@ public class CustomListeners extends TestBase implements ITestListener, ISuiteLi
         MonitoringMail mail = new MonitoringMail();
 
         try {
-            meaasgeBody = "http://"+ InetAddress.
+            meaasgeBody = "http://" + InetAddress.
                     getLocalHost().
-                    getHostAddress()+ ":8080/job/DataDrivenLiveProject/Extent_20Reports/";
+                    getHostAddress() + ":8080/job/DataDrivenLiveProject/Extent_20Reports/";
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
