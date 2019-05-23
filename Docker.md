@@ -19,3 +19,4 @@ use: `docker-machine -D regenerate-certs default`
 * Use command `docker run -d -p 4446:4444 --name selenium-hub -P selenium/hub:2.53.1`
 * Use command `docker run -d -P --link selenium-hub:hub selenium/node-firefox-debug:2.53.1`
 * Use command `docker run -d -P --link selenium-hub:hub selenium/node-chrome-debug:2.53.1`
+* Docker compose (add docker-compose.yml, cd path to file)`docker-compose up -d`

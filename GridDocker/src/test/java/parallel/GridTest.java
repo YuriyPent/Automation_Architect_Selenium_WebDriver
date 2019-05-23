@@ -37,7 +37,7 @@ public class GridTest {
             cap.setPlatform(Platform.WINDOWS);
         }
 
-        driver = new RemoteWebDriver(new URL("http://192.168.99.100:4446/wd/hub"), cap);
+        driver = new RemoteWebDriver(new URL("http://192.168.99.100:4444/wd/hub"), cap);
 
 
         driver.get("http://google.com");
