@@ -7,6 +7,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>XmlAndJsonTest</module>
+        <module>TestDataProject</module>
     </modules>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/net.serenity-bdd/serenity-core -->
