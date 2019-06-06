@@ -15,7 +15,6 @@ public class DataProviders {
         ExcelReader excel = new ExcelReader(Constants.SUITE1_XL_PATH);
         String testcase = m.getName();
         return DataUtil.getData(testcase, excel);
-
     }
 
     @DataProvider(name = "customerDP")
@@ -26,8 +25,5 @@ public class DataProviders {
         ExcelReader excel = new ExcelReader(Constants.SUITE2_XL_PATH);
         String testcase = m.getName();
         return DataUtil.getData(testcase, excel);
-
     }
-
-
 }

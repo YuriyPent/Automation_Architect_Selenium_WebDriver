@@ -17,8 +17,6 @@ public class OpenAccountTest {
         ExcelReader excel = new ExcelReader(Constants.SUITE1_XL_PATH);
         DataUtil.checkExecution("BankManagerSuite", "OpenAccountTest", data.get("Runmode"), excel);
 
-
     }
-
 
 }

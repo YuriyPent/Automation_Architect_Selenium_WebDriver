@@ -10,11 +10,12 @@ public class Constants {
     public static String TESTCASE_COL = "TestCases";
     public static String RUNMODE_YES = "Y";
     public static String RUNMODE_NO = "N";
+
     public static String SUITE_XL_PATH = System.getProperty("user.dir") +
-            "\\TestDataProject\\src\\test\\resources\\testdata\\Suite.xlsx";
+            "\\src\\test\\resources\\testdata\\Suite.xlsx";
     public static String SUITE1_XL_PATH = System.getProperty("user.dir") +
-            "\\TestDataProject\\src\\test\\resources\\testdata\\BankManagerSuite.xlsx";
+            "\\src\\test\\resources\\testdata\\BankManagerSuite.xlsx";
     public static String SUITE2_XL_PATH = System.getProperty("user.dir") +
-            "\\TestDataProject\\src\\test\\resources\\testdata\\CustomerSuite.xlsx";
+            "\\src\\test\\resources\\testdata\\CustomerSuite.xlsx";
 
 }
