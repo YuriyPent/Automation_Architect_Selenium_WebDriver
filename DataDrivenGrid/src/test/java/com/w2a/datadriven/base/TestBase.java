@@ -51,15 +51,11 @@ public class TestBase {
     public String browser;
 
     public void addLog(String message) {
-
-
         log.debug("Thread : " + getThreadValue(dr.get()) + "  " + "Browser : " + browser + "  " + message);
     }
 
     public void captureScreenshot() {
-
         File scrFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
-
         Date d = new Date();
         screenshotName = d.toString().replace(":", "_").replace(" ", "_") + ".jpg";
 
@@ -69,14 +65,12 @@ public class TestBase {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         getExtTest().log(LogStatus.INFO, " Screenshot -> " + test.addScreenCapture(screenshotName));
     }
 
     public void setUp() {
 
         if (driver == null) {
-
             try {
                 fis = new FileInputStream(System.getProperty("user.dir") +
                         "\\src\\test\\resources\\properties\\Config.properties");
@@ -105,18 +99,14 @@ public class TestBase {
     }
 
     public WebDriver getDriver() {
-
         return dr.get();
     }
 
     public void setWebDriver(RemoteWebDriver driver) {
-
         dr.set(driver);
-
     }
 
     public void setExtentTest(ExtentTest et) {
-
         exTest.set(et);
     }
 
@@ -141,19 +131,16 @@ public class TestBase {
         DesiredCapabilities cap = null;
 
         if (browser.equals("firefox")) {
-
             cap = DesiredCapabilities.firefox();
             cap.setBrowserName("firefox");
             cap.setPlatform(Platform.ANY);
 
         } else if (browser.equals("chrome")) {
-
             cap = DesiredCapabilities.chrome();
             cap.setBrowserName("chrome");
             cap.setPlatform(Platform.ANY);
 
         } else if (browser.equals("chrome")) {
-
             cap = DesiredCapabilities.internetExplorer();
             cap.setBrowserName("iexplore");
             cap.setPlatform(Platform.WINDOWS);
@@ -163,33 +150,27 @@ public class TestBase {
         setWebDriver(driver);
         getDriver().manage().timeouts().implicitlyWait(Integer.parseInt(Config.getProperty("implicit.wait")), TimeUnit.SECONDS);
         getDriver().manage().window().maximize();
-        getExtTest().log(LogStatus.INFO, "Browser opened successfully" + browser);
-
+        getExtTest().log(LogStatus.INFO, "Browser opened successfully " + browser);
         //System.out.println(dr.get());
         System.out.println("Thread value is : " + getThreadValue(dr.get()));
-
     }
 
     public void reportPass(String msg) {
-
         getExtTest().log(LogStatus.PASS, msg);
     }
 
     public void reportFailure(String msg) {
-
         getExtTest().log(LogStatus.FAIL, msg);
         captureScreenshot();
         Assert.fail(msg);
     }
 
     public void navigate(String url) {
-
         getDriver().get(Config.getProperty(url));
         getExtTest().log(LogStatus.INFO, "Navigating to " + Config.getProperty(url));
     }
 
     public void click(String locator) {
-
         try {
             if (locator.endsWith("_CSS")) {
                 getDriver().findElement(By.cssSelector(OR.getProperty(locator))).click();
@@ -216,7 +197,6 @@ public class TestBase {
             }
             addLog("Typing in an Element : " + locator);
         } catch (Throwable t) {
-
             reportFailure("Failing while typing in an Element" + locator);
         }
     }
@@ -245,6 +225,5 @@ public class TestBase {
         } catch (NoSuchElementException e) {
             return false;
         }
-
     }
 }

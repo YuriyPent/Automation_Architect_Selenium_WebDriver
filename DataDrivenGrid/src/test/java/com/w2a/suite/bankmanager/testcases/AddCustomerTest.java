@@ -7,7 +7,6 @@ import com.w2a.utilities.DataUtil;
 import com.w2a.utilities.ExcelReader;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
-
 import java.net.MalformedURLException;
 import java.util.Hashtable;
 
@@ -36,9 +35,7 @@ public class AddCustomerTest extends TestBase {
 
     @AfterMethod
     public void tearDown(){
-
         if(rep!=null){
-
             rep.endTest(getExtTest());
             rep.flush();
         }
