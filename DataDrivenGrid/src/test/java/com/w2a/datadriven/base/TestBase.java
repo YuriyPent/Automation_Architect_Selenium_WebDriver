@@ -181,7 +181,7 @@ public class TestBase {
             }
             addLog("Clicking on an Element : " + locator);
         } catch (Throwable t) {
-            reportFailure("Failing while clicking on an Element" + locator);
+            reportFailure("Failing while clicking on an Element " + locator);
         }
     }
 
@@ -197,7 +197,7 @@ public class TestBase {
             }
             addLog("Typing in an Element : " + locator);
         } catch (Throwable t) {
-            reportFailure("Failing while typing in an Element" + locator);
+            reportFailure("Failing while typing in an Element " + locator);
         }
     }
 
@@ -214,7 +214,7 @@ public class TestBase {
             Select select = new Select(dropdown);
             select.selectByVisibleText(value);
         } catch (Throwable t) {
-            reportFailure("Failing while Selecting an Element" + locator);
+            reportFailure("Failing while Selecting an Element " + locator);
         }
     }
 
