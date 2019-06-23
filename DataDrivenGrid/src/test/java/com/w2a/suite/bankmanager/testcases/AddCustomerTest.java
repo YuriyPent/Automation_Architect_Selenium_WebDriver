@@ -7,17 +7,18 @@ import com.w2a.utilities.DataUtil;
 import com.w2a.utilities.ExcelReader;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
+
 import java.net.MalformedURLException;
 import java.util.Hashtable;
 
 public class AddCustomerTest extends TestBase {
 
-    @Test(dataProviderClass=DataProviders.class,dataProvider="bankManagerDP")
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "bankManagerDP")
 
-    public void addCustomerTest(Hashtable<String,String> data) throws MalformedURLException{
+    public void addCustomerTest(Hashtable<String, String> data) throws MalformedURLException {
 
         super.setUp();
-        test = rep.startTest("Add Customer Test"+"   "+data.get("browser"));
+        test = rep.startTest("Add Customer Test" + "   " + data.get("browser"));
         setExtentTest(test);
         ExcelReader excel = new ExcelReader(Constants.SUITE1_XL_PATH);
         DataUtil.checkExecution("BankManagerSuite", "AddCustomerTest", data.get("Runmode"), excel);
@@ -26,16 +27,16 @@ public class AddCustomerTest extends TestBase {
 
         click("bmlBtn_CSS");
         click("addCustBtn_CSS");
-        type("firstname_CSS",data.get("firstname"));
-        type("lastname_XPATH",data.get("lastname"));
-        type("postcode_CSS",data.get("postcode"));
+        type("firstname_CSS", data.get("firstname"));
+        type("lastname_XPATH", data.get("lastname"));
+        type("postcode_CSS", data.get("postcode"));
         click("addbtn_CSS");
         reportPass("Add customer test pass");
     }
 
     @AfterMethod
-    public void tearDown(){
-        if(rep!=null){
+    public void tearDown() {
+        if (rep != null) {
             rep.endTest(getExtTest());
             rep.flush();
         }

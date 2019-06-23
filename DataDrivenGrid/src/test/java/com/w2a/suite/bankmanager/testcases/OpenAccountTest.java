@@ -7,16 +7,17 @@ import com.w2a.utilities.DataUtil;
 import com.w2a.utilities.ExcelReader;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
+
 import java.net.MalformedURLException;
 import java.util.Hashtable;
 
 public class OpenAccountTest extends TestBase {
 
-    @Test(dataProviderClass=DataProviders.class,dataProvider="bankManagerDP")
-    public void openAccountTest(Hashtable<String,String> data) throws MalformedURLException{
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "bankManagerDP")
+    public void openAccountTest(Hashtable<String, String> data) throws MalformedURLException {
 
         super.setUp();
-        test = rep.startTest("Open Account Test"+"   "+data.get("browser"));
+        test = rep.startTest("Open Account Test" + "   " + data.get("browser"));
         setExtentTest(test);
         ExcelReader excel = new ExcelReader(Constants.SUITE1_XL_PATH);
         DataUtil.checkExecution("BankManagerSuite", "OpenAccountTest", data.get("Runmode"), excel);
@@ -25,15 +26,15 @@ public class OpenAccountTest extends TestBase {
 
         click("bmlBtn_CSS");
         click("openaccount_CSS");
-        select("customer_CSS",data.get("customer"));
-        select("currency_CSS",data.get("currency"));
+        select("customer_CSS", data.get("customer"));
+        select("currency_CSS", data.get("currency"));
         click("process_CSS");
         reportPass("Open Account test pass");
     }
 
     @AfterMethod
-    public void tearDown(){
-        if(rep!=null){
+    public void tearDown() {
+        if (rep != null) {
             rep.endTest(getExtTest());
             rep.flush();
         }
