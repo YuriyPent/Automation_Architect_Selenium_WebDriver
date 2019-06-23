@@ -20,5 +20,5 @@ follow on-screen instructions to complete `env` setup, and run `docker ps`, `doc
         Post-build Actions
             Publish HTML reports
                 HTML directory to archive - Path to reports
-                Index pages(s) - jenkins*.html
+                Index pages(s) - jenkins_*.html
                 Report title - Extent Reports
