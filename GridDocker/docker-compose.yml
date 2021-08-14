@@ -14,7 +14,7 @@ services:
             - w2agrid_grid_internal
 
     nodechrome:
-        image: selenium/node-chrome-debug:2.53.1
+        image: selenium/node-chrome-debug:3.141.59
         privileged: true
         depends_on:
             - w2agrid
