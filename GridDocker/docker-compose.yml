@@ -2,7 +2,7 @@ version: '2'
 
 services:
     w2agrid:
-        image: selenium/hub:2.53.1
+        image: selenium/hub:4.19.0
         container_name: w2agrid
         privileged: true
         ports:
